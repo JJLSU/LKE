@@ -1,0 +1,30 @@
+LAST KIDS ON EARTH - PROJECT HANDOFF
+
+CURRENT BUILD
+v140 externalized, derived directly from v139_ruby_old_secondary.
+
+STRUCTURE
+- index.html: game code and UI, now ~0.35 MB instead of ~160 MB.
+- assets/images/png: extracted PNG art.
+- assets/images/webp: extracted WEBP art.
+- assets/audio: the three game music tracks.
+- asset_manifest.json: SHA-256 manifest and occurrence counts.
+
+IMPORTANT CURRENT STATE
+- Ray, Big Mack, and SK8 Kid use the new sharper title-menu portraits.
+- Ruby's secondary attack is reverted to the older chain-blade behavior that shoots outward from her.
+- SK8 Kid gameplay animation art uses the cleaned transparent-edge frames from the current build.
+- The civilian replacement work and sandbag layering fixes from the current line of builds are retained.
+- The game title remains Last Kids on Earth.
+
+DEVELOPMENT RULES
+- Keep the externalized asset structure. Do not re-embed the images or music into index.html.
+- When changing art, replace or add files under assets and update the relative path in index.html.
+- Preserve relative asset paths so the folder can be hosted on GitHub Pages.
+- Package the whole folder when delivering a build.
+- Always provide clickable download links for generated files.
+
+VALIDATION PERFORMED FOR V140
+- 586 embedded base64 occurrences externalized into 554 unique files.
+- All 554 asset references in index.html resolve to files in the package.
+- All 14 inline script blocks pass node --check syntax validation.
